@@ -1,0 +1,14 @@
+<p>Click Genre to see films</p>
+<ul>
+  <% @categories.each do |category| %>
+  <!-- <li>link_to "Category", category_films_path(@film.id)</li> -->
+    <li><a href="/categories/:category_id/films"><%= category.name %></a></li>
+
+  <% end %>
+</ul>
+
+
+<!-- display all categories, as a link  -->
+  <!-- link should redirect to films page that match cat.id that is selected -->
+
+  <!-- category_films_path == films#index -->
