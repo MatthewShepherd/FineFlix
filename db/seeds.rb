@@ -38,14 +38,36 @@ ateam = action.films.create(title: "The A-Team")
 # USERS
 tom = User.create!(username: 'tomtom', email: "tom@tom.com", password: "tomtom")
 ken = User.create!(username: 'kenken', email: "ken@ken.ken", password: "kenken")
+ally = User.create!(username: 'ally', email: "ally@ally.com", password: "ally")
+
+
 
 # FILM RATINGS
 psu.ratings.create(value: 3, user: tom)
+psu.ratings.create(value: 5, user: ally)
+psu.ratings.create(value: 3, user: ken)
 unbreakable.ratings.create(value: 2, user: ken)
+unbreakable.ratings.create(value: 4, user: ally)
+unbreakable.ratings.create(value: 3, user: tom)
+titanic.ratings.create(value: 5, user: ally)
+titanic.ratings.create(value: 2, user: tom)
+titanic.ratings.create(value: 3, user: ken)
+texas.ratings.create(value: 2, user: ally)
+texas.ratings.create(value: 5, user: tom)
+texas.ratings.create(value: 2, user: ken)
+wars.ratings.create(value: 5, user: ken)
+wars.ratings.create(value: 4, user: ally)
+wars.ratings.create(value: 5, user: tom)
+ateam.ratings.create(value: 4, user: ally)
+ateam.ratings.create(value: 5, user: tom)
+ateam.ratings.create(value: 4, user: ken)
 
 # REVIEWS
 psu_review = psu.reviews.create!(title: 'Hilarious', body: "Laughed my ass off the entire time", user: tom)
-unbreakable_review = unbreakable.reviews.create(title: "broke my heart", body: 'so much truth in the scenes', user: ken)
+psu_view = psu.reviews.create!(title: "It was funny... ", body: "if that's your kind of comedy. Definitely not a movie for everyone.", user: ken)
+unbreakable_review = unbreakable.reviews.create!(title: "broke my heart", body: 'so much truth in the scenes', user: ken)
+unbreakable_view = unbreakable.reviews.create!(title: 'Some things will never be destroyed.', body: "Just as the title suggests... this film is amazing", user: ally)
+titanic_review = titanic.reviews.create!(title: "Oh my heart will go on", body: 'and on and on...', user: ally)
 
 # FILM COMMENTS
 psu_comment = psu.comments.create(body: "funniest movie I've ever seen!", user: tom)
