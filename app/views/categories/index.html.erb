@@ -3,7 +3,7 @@
 <p>Click Genre to see films</p>
 <ul>
   <% @categories.each do |category| %>
-    <li><%= link_to category.name, category_films_path(category) %></li>
+    <li><%= link_to category.name, category_index_path(category) %></li>
   <% end %>
 </ul>
 
