@@ -14,9 +14,9 @@
   </div>
   <!-- display info for particular film -->
   <div class='col-md-3 d-inline'>
-    <p>Film Rating: <%= @film.average_rating %></p>
+    <h6>Film Rating:<%= @film.average_rating %></h6>
     <div>
-      <h4>Comments: <%= @film.comments.size %></h4>
+      <h5>Comments about <%= @film.title %>: <%= @film.comments.size %></h5>
       <ul>
         <% @film.comments.each do |comment| %>
           <li><%= comment.body %></li>
@@ -26,18 +26,13 @@
   </div>
   <div class='col-md-3 d-inline'>
     <h4>Reviews: <%= @film.reviews.size %></h4>
-    <ul>
       <% @film.reviews.each do |review| %>
-      Review Title: <%= review.title %>
-      <li><%= review.body %></li>
+        <strong>Review Title:</strong>
+        <%= review.title %>
+          <%= review.body %>
       <% end %>
-    </ul>
   </div>
 </div>
-
-
-
-
 
 
 <!-- if logged_in  -->
