@@ -14,6 +14,11 @@ class FilmsController < ApplicationController
     @category = @film.category
   end
 
+  def category_index
+    @category = Category.find(params[:category_id])
+    @films = @category.films
+  end
+
 
 end
 
