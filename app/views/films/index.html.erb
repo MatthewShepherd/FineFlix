@@ -1,15 +1,18 @@
 <h1>Films Index</h1>
-<ul>
 
+<!-- film#index should list all films regardless of category -->
+<!-- When user selects film title - go to film#show -->
+  <!-- film#show = category_film_path -->
+<ul>
 <% @films.each do |film| %>
-  <li><%= film.title %></li>
+  <li><%= link_to film.title, category_film_path(film.category, film) %></li>
 <% end %>
 </ul>
 
 
-<!-- film#index should list all films regardless of category -->
 
-<!-- When user selects film title -- go to film#show -->
+<%= link_to 'Film Categories', categories_path %>
 
 
-<!-- Have link to go back to select another category -->
+
+<!-- <a href"/categories/ category.id %>/films/film.id %> %>"> -->
