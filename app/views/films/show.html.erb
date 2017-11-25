@@ -16,8 +16,8 @@
   <div class='col-md-3 d-inline'>
     <h6>Film Rating:<%= @film.average_rating %></h6>
     <div>
-      <h5>Comments about <%= @film.title %>: <%= @film.comments.size %></h5>
-      <ul>
+      <h5><%= @film.comments.size %> Comments about <%= @film.title %></h5>
+      <ul style="list-style: none">
         <% @film.comments.each do |comment| %>
           <li><%= comment.body %></li>
         <% end %>
@@ -25,12 +25,15 @@
     </div>
   </div>
   <div class='col-md-3 d-inline'>
-    <h4>Reviews: <%= @film.reviews.size %></h4>
-      <% @film.reviews.each do |review| %>
-        <strong>Review Title:</strong>
-        <%= review.title %>
-          <%= review.body %>
-      <% end %>
+    <h4><%= @film.reviews.size %> Reviews</h4>
+      <ul style="list-style: none">
+        <% @film.reviews.each do |review| %>
+          <strong>Title of Review:</strong>
+          <%= review.title %>
+          <li>by <%= review.user.username %></li>
+          <li><%= review.body %></li>
+        <% end %>
+      </ul>
   </div>
 </div>
 
