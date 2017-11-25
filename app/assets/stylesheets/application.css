@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+
+.film-thumb {
+  list-style-type: none;
+  height: 170px;
+  width: 120px;
+
+}
+
+.film-poster {
+  height: 300px;
+  width: 200px;
+}

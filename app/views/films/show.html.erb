@@ -1,5 +1,5 @@
 <h2><%= @film.title %></h2>
-
+<div class="film-poster"><%= image_tag(@film.image_url) %></div>
 <!-- display info for particular film -->
 <p>Film Rating: <%= @film.average_rating %></p>
 <div>
@@ -24,7 +24,7 @@
 
 
 <p><%= link_to 'Home', root_path %></p>
-
+<p><%= link_to 'Categories', categories_path %></p>
 
 
 <!-- if logged_in  -->
