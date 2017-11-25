@@ -1,0 +1,10 @@
+<h2><%= @category.name %></h2>
+
+<div>
+  <ul>
+    <% @films.each do |film| %>
+    <li><%= link_to film.title, category_film_path(film.category, film) %></li>
+
+    <% end %>
+  </ul>
+</div>

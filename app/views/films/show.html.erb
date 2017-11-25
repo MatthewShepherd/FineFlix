@@ -1,0 +1,39 @@
+<h2><%= @film.title %></h2>
+
+<!-- display info for particular film -->
+<p>Film Rating: <%= @film.average_rating %></p>
+<div>
+  <h4>Comments: <%= @film.comments.size %></h4>
+  <ul>
+    <% @film.comments.each do |comment| %>
+      <li><%= comment.body %></li>
+    <% end %>
+  </ul>
+</div>
+<div>
+  <h4>Reviews: <%= @film.reviews.size %></h4>
+  <ul>
+    <% @film.reviews.each do |review| %>
+    Review Title: <%= review.title %>
+    <li><%= review.body %></li>
+    <% end %>
+  </ul>
+</div>
+
+
+
+
+<p><%= link_to 'Home', root_path %></p>
+
+
+
+<!-- if logged_in  -->
+  <!-- user can comment -->
+  <!-- user can rate film -->
+  <!-- user can rate film review -->
+
+<!-- if logged_in && trusted_reviewer -->
+  <!-- user can review film  -->
+  <!-- user can comment -->
+  <!-- user can rate film -->
+  <!-- user can rate film review -->
