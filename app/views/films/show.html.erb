@@ -1,25 +1,38 @@
-<h2><%= @film.title %></h2>
-<div class="film-poster"><%= image_tag(@film.image_url) %></div>
-<!-- display info for particular film -->
-<p>Film Rating: <%= @film.average_rating %></p>
-<div>
-  <h4>Comments: <%= @film.comments.size %></h4>
-  <ul>
-    <% @film.comments.each do |comment| %>
-      <li><%= comment.body %></li>
-    <% end %>
-  </ul>
-</div>
-<div>
-  <h4>Reviews: <%= @film.reviews.size %></h4>
-  <ul>
-    <% @film.reviews.each do |review| %>
-    Review Title: <%= review.title %>
-    <li><%= review.body %></li>
-    <% end %>
-  </ul>
+<div class="card">
+  <div class="card-header deep-orange lighten-1 white-text">
+    <h2><%= @film.title %></h2>
+  </div>
+  <div class="card-body">
+    <%= link_to 'Film Categories', categories_path, class: 'btn btn-primary card-title' %>
+  </div>
 </div>
 
+<div class='container'>
+  <div class='col-md-3 d-inline'>
+    <%= image_tag(@film.image_url, class: 'film-poster') %>
+  </div>
+  <!-- display info for particular film -->
+  <div class='col-md-3 d-inline'>
+    <p>Film Rating: <%= @film.average_rating %></p>
+    <div>
+      <h4>Comments: <%= @film.comments.size %></h4>
+      <ul>
+        <% @film.comments.each do |comment| %>
+          <li><%= comment.body %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class='col-md-3 d-inline'>
+    <h4>Reviews: <%= @film.reviews.size %></h4>
+    <ul>
+      <% @film.reviews.each do |review| %>
+      Review Title: <%= review.title %>
+      <li><%= review.body %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
 
 
