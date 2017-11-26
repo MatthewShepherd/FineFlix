@@ -6,11 +6,6 @@ class Film < ApplicationRecord
 
   after_create :fetch_images
 
-
-  def average_rating
-    self.ratings.reduce(0) {|sum, rating| sum += rating.value} / self.ratings.size
-  end
-
   def fetch_images
     @adapter = ImdbAdapter.new
     eap self.title

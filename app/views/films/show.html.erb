@@ -20,6 +20,7 @@
       <ul style="list-style: none">
         <% @film.comments.each do |comment| %>
           <li><%= comment.body %></li>
+          <li class="author">by: <%= comment.user.username %></li>
         <% end %>
       </ul>
     </div>
@@ -30,12 +31,23 @@
         <% @film.reviews.each do |review| %>
           <strong>Title of Review:</strong>
           <%= review.title %>
-          <li>by <%= review.user.username %></li>
           <li><%= review.body %></li>
+          <li class="author">by: <%= review.user.username %></li>
+          <li>Average rating: <%= review.average_rating %></li>
+          <li>
+            <p>Comments:</p>
+            <ul>
+              <% review.comments.each_with_index do |comment, idx| %>
+                <li><%= idx + 1 %>: <%= comment.body %></li>
+              <% end %>
+            </ul>
+          </li>
         <% end %>
       </ul>
   </div>
 </div>
+
+
 
 
 <!-- if logged_in  -->
