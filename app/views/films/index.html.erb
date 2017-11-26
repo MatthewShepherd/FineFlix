@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-header deep-orange lighten-1 white-text">
+    <h1>Films Index</h1>
+  </div>
+  <div class="card-body">
+    <%= link_to 'Film Categories', categories_path, class: 'btn btn-primary card-title' %>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <% @films.each do |film| %>
+    <%= link_to image_tag(film.thumbnail_url, class: 'film-thumb'), category_film_path(film.category, film), class: "col-md-3" %>
+  <% end %>
+</div>
+

@@ -1,0 +1,62 @@
+<div class="card">
+  <div class="card-header deep-orange lighten-1 white-text">
+    <h2><%= @film.title %></h2>
+  </div>
+  <div class="card-body">
+    <%= link_to 'Film Categories', categories_path, class: 'btn btn-primary card-title' %>
+    <%= link_to 'Home', root_path, class: 'btn btn-primary card-title' %>
+  </div>
+</div>
+
+<div class='container'>
+  <div class='col-md-3 d-inline'>
+    <%= image_tag(@film.image_url, class: 'film-poster') %>
+  </div>
+  <!-- display info for particular film -->
+  <div class='col-md-3 d-inline'>
+    <h6>Film Rating:<%= @film.average_rating %></h6>
+    <div>
+      <h5><%= @film.comments.size %> Comments about <%= @film.title %></h5>
+      <ul style="list-style: none">
+        <% @film.comments.each do |comment| %>
+          <li><%= comment.body %></li>
+          <li class="author">by: <%= comment.user.username %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class='col-md-3 d-inline'>
+    <h4><%= @film.reviews.size %> Reviews</h4>
+      <ul style="list-style: none">
+        <% @film.reviews.each do |review| %>
+          <strong>Title of Review:</strong>
+          <%= review.title %>
+          <li><%= review.body %></li>
+          <li class="author">by: <%= review.user.username %></li>
+          <li>Average rating: <%= review.average_rating %></li>
+          <li>
+            <p>Comments:</p>
+            <ul>
+              <% review.comments.each_with_index do |comment, idx| %>
+                <li><%= idx + 1 %>: <%= comment.body %></li>
+              <% end %>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+  </div>
+</div>
+
+
+
+
+<!-- if logged_in  -->
+  <!-- user can comment -->
+  <!-- user can rate film -->
+  <!-- user can rate film review -->
+
+<!-- if logged_in && trusted_reviewer -->
+  <!-- user can review film  -->
+  <!-- user can comment -->
+  <!-- user can rate film -->
+  <!-- user can rate film review -->
